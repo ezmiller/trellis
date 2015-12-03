@@ -138,7 +138,8 @@ manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
 # initialize i18n
-babel = Babel(app)
+default_lang = app.config.get("DEFAULT_LANGUAGE")
+babel = Babel(app, default_lang)
 
 # initialize email support
 mail = Mail(app)
