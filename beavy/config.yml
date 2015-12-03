@@ -37,6 +37,7 @@ DEVELOPMENT: &development
   CELERY_RESULT_BACKEND: redis://localhost:6379
   SECURITY_PASSWORD_SALT: "__DEV"
   RATELIMIT_ENABLED: False
+  DEFAULT_LANGUAGE: en
 
 TEST: &test
   <<: *common
