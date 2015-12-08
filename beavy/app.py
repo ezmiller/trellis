@@ -1,4 +1,4 @@
-from flask import Flask, session, url_for, redirect, json
+from flask import Flask, session, url_for, redirect, json, request
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.script import Manager
 from flask.ext.marshmallow import Marshmallow
@@ -16,6 +16,7 @@ from flask.ext.babel import Babel
 from beavy.utils.deepmerge import deepmerge
 
 from flask_environments import Environments
+from flask_security import current_user
 from pprint import pprint
 
 from celery import Celery
@@ -137,9 +138,6 @@ manager = Manager(app)
 # add DB+migrations commands
 manager.add_command('db', MigrateCommand)
 
-# initialize i18n
-default_lang = app.config.get("DEFAULT_LANGUAGE")
-babel = Babel(app, default_lang)
 
 # initialize email support
 mail = Mail(app)
@@ -153,6 +151,19 @@ for handler in app.logger.handlers:
 # add caching support
 cache = Cache(app)
 
+#  -------------- initialize i18n --------------
+babel = Babel(app, app.config.get("DEFAULT_LANGUAGE"))
+
+@babel.localeselector
+def get_locale():
+    """Attempts to determine i18n locale."""
+    locale = None
+    if current_user.is_authenticated():
+        return current_user.language_preference
+    elif app.config.get("LANGUAGES") is not None:
+        languages = app.config.get("LANGUAGES")
+        return request.accept_languages.best_match(languages.keys())
+    return locale # If no locale, babel uses the default setting.
 
 #  ------ Database setup is done after here ----------
 from beavy.models.user import User
