@@ -22,6 +22,9 @@ COMMON: &common
 
   # i18n STUFF
   DEFAULT_LANGUAGE: en
+  LANGUAGES:
+    - en
+    - de
 
   RATELIMITS:
     # custom rate limits:

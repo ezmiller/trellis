@@ -156,13 +156,13 @@ babel = Babel(app, app.config.get("DEFAULT_LANGUAGE"))
 
 @babel.localeselector
 def get_locale():
-    """Attempts to determine i18n locale."""
+    """Determines i18n locale if possible."""
     locale = None
     if current_user.is_authenticated():
         return current_user.language_preference
     elif app.config.get("LANGUAGES") is not None:
         languages = app.config.get("LANGUAGES")
-        return request.accept_languages.best_match(languages.keys())
+        return request.accept_languages.best_match(languages)
     return locale # If no locale, babel uses the default setting.
 
 #  ------ Database setup is done after here ----------

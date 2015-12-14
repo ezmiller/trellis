@@ -42,6 +42,12 @@ URLS:
 # localization language? The default is English.
 # DEFAULT_LANGUAGE: 'en'
 
+# Which internatioanlization languages do you want to support?
+# By default, Beavy supports English and German.
+# LANGUAGES:
+#   - en
+#   - de
+
 # Uncomment this to enable registrations
 # SECURITY_REGISTERABLE: true
 
