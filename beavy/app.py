@@ -152,6 +152,8 @@ for handler in app.logger.handlers:
 cache = Cache(app)
 
 #  -------------- initialize i18n --------------
+import json
+from flask.ext.babel import Babel, get_locale, get_translations
 babel = Babel(app, app.config.get("DEFAULT_LANGUAGE"))
 
 @babel.localeselector
@@ -164,6 +166,10 @@ def get_locale():
         languages = app.config.get("LANGUAGES")
         return request.accept_languages.best_match(languages)
     return locale # If no locale, babel uses the default setting.
+
+@app.context_processor
+def inject_translations():
+    return dict(TRANSLATIONS=json.dumps(get_translations()._catalog))
 
 #  ------ Database setup is done after here ----------
 from beavy.models.user import User
