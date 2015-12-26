@@ -14,4 +14,7 @@ if (window.PRELOAD && window.PRELOAD.TRANSLATIONS)
 // Jed docs: https://slexaxton.github.io/Jed/
 let i18n = new Jed(jedInitJson)
 
+if (typeof i18n !== 'object')
+  console.error('Failed to intialize Jed translations.')
+
 export default i18n
