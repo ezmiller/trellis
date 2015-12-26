@@ -1,0 +1,32 @@
+# English translations for PROJECT.
+# Copyright (C) 2015 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# 
+# Translators:
+# Ethan Miller <ethanzanemiller@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Beavy\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2015-12-26 21:01+0000\n"
+"PO-Revision-Date: 2015-12-26 21:38+0000\n"
+"Last-Translator: Ethan Miller <ethanzanemiller@gmail.com>\n"
+"Language-Team: German (http://www.transifex.com/beavy/beavy/language/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.1.1\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: beavy/jsbeavy/views/HomeView.js:48
+msgid "Welcome to Beavy!"
+msgstr "Wilkommen zu Beavy!"
+
+#: beavy/jsbeavy/views/HomeView.js:53
+msgid "Please take a look at the"
+msgstr "Schauen Sie sich bitte die"
+
+#: beavy/jsbeavy/views/HomeView.js:58
+msgid "documentation"
+msgstr "Dokumentation"
