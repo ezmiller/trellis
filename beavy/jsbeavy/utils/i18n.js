@@ -12,6 +12,6 @@ if (window.PRELOAD && window.PRELOAD.TRANSLATIONS)
 // keys will be passed through directly, i.e. the default of
 // English will be used.
 // Jed docs: https://slexaxton.github.io/Jed/
-var i18n = new Jed(jedInitJson)
+let i18n = new Jed(jedInitJson)
 
 export default i18n
