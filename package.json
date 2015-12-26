@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "beavy frontend",
   "scripts": {
+    "prepare-i18n": "./node_modules/babel-cli/bin/babel.js --out-dir beavy beavy && ./node_modules/babel-cli/bin/babel.js --out-dir beavy_modules beavy_modules && ./node_modules/babel-cli/bin/babel.js --out-dir beavy_apps beavy_apps",
     "style-check": "eslint beavy/jsbeavy/**/**.jsx beavy_modules/**/**.jsx beavy_apps/**/**.jsx .infrastructure/**/*.js",
     "style-fix": "eslint --fix beavy/jsbeavy/**/**.jsx beavy_modules/**/**.jsx beavy_apps/**/**.jsx .infrastructure/**/**.js",
     "test": "jest --coverage jsbeavy beavy_modules/ beavy_apps",
