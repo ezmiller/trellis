@@ -60,6 +60,7 @@ passlib==1.6.5
 path.py==8.1.2
 pexpect==4.0.1
 pickleshare==0.5
+polib==1.0.7
 psycopg2==2.6.1
 ptyprocess==0.5
 py==1.4.30

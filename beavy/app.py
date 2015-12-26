@@ -12,7 +12,6 @@ from flask_limiter.util import get_ipaddr
 from flask_admin import Admin, AdminIndexView
 
 from flask_social_blueprint.core import SocialBlueprint as SocialBp
-from flask.ext.babel import Babel
 from beavy.utils.deepmerge import deepmerge
 
 from flask_environments import Environments
@@ -153,6 +152,7 @@ cache = Cache(app)
 
 #  -------------- initialize i18n --------------
 import json
+import polib
 from flask.ext.babel import Babel, get_locale, get_translations
 babel = Babel(app, app.config.get("DEFAULT_LANGUAGE"))
 
@@ -169,7 +169,12 @@ def get_locale():
 
 @app.context_processor
 def inject_translations():
-    return dict(TRANSLATIONS=json.dumps(get_translations()._catalog))
+    locale = get_locale()
+    domain = get_translations().domain
+    path = (os.path.dirname(__file__) + '/translations/'
+            + locale + '/LC_MESSAGES/' + domain + '.po')
+    po = polib.pofile(path)
+    return dict(TRANSLATIONS=json.dumps(po.__str__()))
 
 #  ------ Database setup is done after here ----------
 from beavy.models.user import User
