@@ -186,6 +186,7 @@ module.exports = function (options) {
           loader: 'babel'
         }].concat(loadersByExtension(loaders)).concat(loadersByExtension(stylesheetLoaders)).concat(additionalLoaders)
     },
+		node: { fs: 'empty' },
     devtool: options.devtool,
     debug: options.debug,
     resolveLoader: {
