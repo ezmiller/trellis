@@ -4,7 +4,7 @@ import po2json from 'po2json'
 
 let jedInitJson = {}
 if (window.PRELOAD && window.PRELOAD.TRANSLATIONS)
-  jedInitJson = po2json.parse(window.PRELOAD.TRANSLATIONS, {format: 'jed'})
+  jedInitJson = po2json.parse(window.PRELOAD.TRANSLATIONS, {format: 'jed1.x'})
 
 // Initialize Jed with translation data passed from server.
 // If the translations object is somehow not passed, Jed is
