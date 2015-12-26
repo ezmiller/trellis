@@ -1,3 +1,9 @@
 [main]
 host = https://www.transifex.com
 
+[beavy.messages]
+file_filter = beavy/translations/<lang>/LC_MESSAGES/<lang>.po
+source_file = beavy/translations/en/LC_MESSAGES/messages.po
+source_lang = en
+type = PO
+
