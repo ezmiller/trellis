@@ -1,0 +1,16 @@
+NAME: "Trellis"
+
+MODULES:
+ - comments
+ - likes
+ - private_messaging
+ - url_extractor
+
+APP: 'trellis'
+
+HOME_URL: '/accounts/comment'
+
+DEFAULT_LANGUAGE: 'de'
+LANGUAGES:
+  - en
+  - de

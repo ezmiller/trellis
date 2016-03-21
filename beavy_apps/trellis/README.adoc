@@ -1,0 +1,20 @@
+= Trellis
+
+**THIS IS STILL INCOMPLETE**
+
+This app provides collaborative space for scholars and other thinkers
+to converse about ideas and scholarship.
+
+== Configuration
+
+In order to have this work in a feature complete manner, please put the following into your `config.yaml` (in the root):
+
+```
+NAME: "Trellis"
+
+FRONTEND: 'trellis'
+
+MODULES:
+ - comments
+ - likes
+```
