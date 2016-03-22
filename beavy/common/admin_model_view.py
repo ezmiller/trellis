@@ -8,7 +8,7 @@ from flask_security import current_user
 class AdminModelView(ModelView):
 
     def is_accessible(self):
-        if not current_user.is_active() or not current_user.is_authenticated:
+        if not current_user.is_active or not current_user.is_authenticated:
             return False
 
         if current_user.has_role('admin'):
@@ -38,7 +38,8 @@ class AdminModelView(ModelView):
 
             See commit ``#45a2723`` for details.
         """
-        if 'polymorphic_identity' in self.model.__mapper_args__:
+        if 'polymorphic_identity' in getattr(self.model, "__mapper_args__",
+                                             {}):
             return self.session.query(func.count('*')).select_from(
                 self.model.query.selectable)
 
