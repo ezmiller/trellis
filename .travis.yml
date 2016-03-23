@@ -149,8 +149,7 @@ addons:
   ssh_known_hosts:
     - github.com
     - 46.101.137.120
-    # ✨ ADD YOUR DEPLOYMENT SERVERNAME/IP HERE:
-    # - myserver.example.org
+    - 45.55.145.69
   postgresql: '9.4'
   code_climate:
     repo_token: 267de20fcb1419ff02cfe22e5009111ffc86347f398762cbb700ad56f8279ca6
