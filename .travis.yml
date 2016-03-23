@@ -42,8 +42,6 @@ before_install:
   - LD_LIBRARY_PATH=~/lib python install.py
   # install coveralls to send coverage stats there
   - pip install coveralls
-  # clear cache to try to fix left-pad un-un-publish debacle
-  - npm cache clean
 
 before_script:
   # for full frontend behave testing, we are using
