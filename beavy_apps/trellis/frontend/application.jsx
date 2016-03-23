@@ -15,7 +15,7 @@ export default class Application extends React.Component {
     return <div>
             <UserModal />
               <MainMenu
-                logo='http://beavy.xyz/logos/kong.svg'
+                logo='http://beavy.xyz/logos/logo.svg'
                 navigationTools={<UserMenuWidget />}
               >
                 {getExtensions('MainMenuItem').map(x => x.call(this))}
