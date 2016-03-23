@@ -8,14 +8,14 @@ python:
 env:
   global:
     # ✨ UNCOMMENT AND CHANGE THE FOLLOWING TO THE REMOTE SERVER YOU WANT TO BUILD
-    # - DEPLOY_COMMAND="git push -f dokku@SERVER:APP HEAD:master"
+    - DEPLOY_COMMAND="git push -f dokku@45.55.145.69:trellis HEAD:master"
     # ✨ CHANGE THE FOLLOWING TO SLUG OF YOUR REPO AND BRANCH
     #    TO TRIGGER DEPLOY
     - DEPLOY_SLUG=ezmiller/trellis
-    - DEPLOY_BRANCH=basic-app-setup
+    - DEPLOY_BRANCH=trellis
     # ✨ END OF CHANGES
     - BEAVY_ENV=TEST
-    - secure: 42qbN2sBRUwB8q99XdMJDsr1FelB3fUA8wRjRbH7ZGKRDH6CKHALno/RV2QIzpbJTlwi/6ax5MV3FQTEPN5p726Zj1JiwOun3RW2kRdqCm/xNGyh4B5FxJxyzq0hSIFdJCXihJd1Frm2JltHMkRCadl6VtlmdY9L7N1SRHQoJs0X4wU354LJFpDu2trBZKESUWee73VgdynDwlT6nehwcj42TxyXt9lr3moZUHLIfXvnyMFL7tp1CDMdbAkD4m1hq1UG1jxHQRbHfzTEtem+8oVAi8I3Hrpds4/lnIjP6/LJi8bR3c9rKKykKe1EKZnhYUf/lwD00jdR4g8c1tR3F/kTByFjxGFRfpRUzJXi6dD8Q2JOdu8zVAuIgnZg2Gh+c5z+V3/L27ax1x4sYyiXbi/lQpbE6XSkn4wLWi9Y1TK1kl1N92NkVipLwHz535tcWLwQ9KwzpVUBznGcYw5XQO3sbVcSF4PiEpiET+MjwV5o5MkOfD67FATZo9GlSwKpmSoSsd2JgpjzieRNt+VDyC4liDWco2HA3191DSO2f/q91w3bpwlGRCKP/X78npeIVGCMOzWSnTmPtOLZd3MjC/g/HFb90SG6cjAC1nTkR8RHTAXYBSnUZgr1Gl/8A1I86LSDKhXGoBGHjJTFt0ViAX+Ho9Yn0LCrtrN7SeiuSEs=
+
   matrix:
     # ✨ REPLACE THESE WITH THE APP YOU WANT TO BUILD
     # RECOMMENDED WAY: comment these and add your own after
@@ -89,7 +89,7 @@ after_success:
   # ✨ YOU PROBABLY HAVE TO REPLACE THIS WITH THE COMMAND FOR YOUR
   #    OWN id_rsa file!
   # (in "no fail mode: `|| true`)
-  - openssl aes-256-cbc -K $encrypted_14a798302832_key -iv $encrypted_14a798302832_iv -in .infrastructure/travis/beavy_deploy.enc -out .infrastructure/travis/id_rsa -d || true
+  - openssl aes-256-cbc -K $encrypted_4ea2ddac7682_key -iv $encrypted_4ea2ddac7682_iv -in .infrastructure/travis/id_rsa.in -out .infrastructure/travis/id_rsa -d
 
   # now try to deploy the app, if we are
   # on the deploy branch and the deploy repo
@@ -149,8 +149,7 @@ addons:
   ssh_known_hosts:
     - github.com
     - 46.101.137.120
-    # ✨ ADD YOUR DEPLOYMENT SERVERNAME/IP HERE:
-    # - myserver.example.org
+    - 45.55.145.69
   postgresql: '9.4'
   code_climate:
     repo_token: 267de20fcb1419ff02cfe22e5009111ffc86347f398762cbb700ad56f8279ca6
