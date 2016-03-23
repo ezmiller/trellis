@@ -1,4 +1,4 @@
-import { React, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import { MainMenu } from 'components/MainMenu'
 import UserModal from 'containers/UserModal'
 import UserMenuWidget from 'containers/UserMenuWidget'
