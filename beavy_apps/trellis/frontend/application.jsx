@@ -6,7 +6,7 @@ import UserMenuWidget from 'containers/UserMenuWidget'
 import { getExtensions } from 'config/extensions'
 
 // This is your app entry point
-export default class Application extends React.Component {
+export default class TrellisApplication extends React.Component {
   static propTypes = {
     children: PropTypes.object
   }
