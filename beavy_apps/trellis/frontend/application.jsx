@@ -3,7 +3,10 @@ import { MainMenu } from 'components/MainMenu'
 import UserModal from 'containers/UserModal'
 import UserMenuWidget from 'containers/UserMenuWidget'
 
+import { setupViews } from './setup'
 import { getExtensions } from 'config/extensions'
+
+setupViews()
 
 // This is your app entry point
 export default class TrellisApplication extends React.Component {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { addExtension, addNamedExtension } from 'config/extensions'
 import { Route } from 'react-router'
-import { STORY_SUBMIT, STORY_SUBMIT_REQUEST, STORY_SUBMIT_SUCCESS, STORY_SUBMIT_FAILURE } from './config/consts'
+import { STORY_SUBMIT, STORY_SUBMIT_REQUEST, STORY_SUBMIT_SUCCESS, STORY_SUBMIT_FAILURE } from './consts'
 
 import simpleSubmit from 'reducers/simple_submit'
 
