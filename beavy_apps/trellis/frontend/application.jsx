@@ -21,6 +21,7 @@ export default class TrellisApplication extends React.Component {
     return <div>
             <UserModal />
               <MainMenu
+                styles={MainMenuStyles}
                 logo='http://beavy.xyz/logos/logo.svg'
                 navigationTools={<UserMenuWidget />} >
                 {getExtensions('MainMenuItem').map(x => x.call(this))}>
