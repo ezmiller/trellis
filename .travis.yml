@@ -12,7 +12,7 @@ env:
     # ✨ CHANGE THE FOLLOWING TO SLUG OF YOUR REPO AND BRANCH
     #    TO TRIGGER DEPLOY
     - DEPLOY_SLUG=ezmiller/trellis
-    - DEPLOY_BRANCH=add-submit-form
+    - DEPLOY_BRANCH=trellis
     # ✨ END OF CHANGES
     - BEAVY_ENV=TEST
 
