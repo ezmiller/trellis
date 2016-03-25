@@ -1,10 +1,13 @@
 import React, { PropTypes } from 'react'
-import { MainMenu } from 'components/MainMenu'
+import { MainMenu, styles as MainMenuStyles } from 'components/MainMenu'
 import UserModal from 'containers/UserModal'
 import UserMenuWidget from 'containers/UserMenuWidget'
 
+import { Link } from 'react-router'
+
 import { setupViews } from './setup'
 import { getExtensions } from 'config/extensions'
+import { FormattedMessage } from 'react-intl'
 
 setupViews()
 
@@ -19,9 +22,11 @@ export default class TrellisApplication extends React.Component {
             <UserModal />
               <MainMenu
                 logo='http://beavy.xyz/logos/logo.svg'
-                navigationTools={<UserMenuWidget />}
-              >
-                {getExtensions('MainMenuItem').map(x => x.call(this))}
+                navigationTools={<UserMenuWidget />} >
+                {getExtensions('MainMenuItem').map(x => x.call(this))}>
+                <Link to='/submit/'>
+                  <FormattedMessage id='submit' deafultMessage='submit' />
+                </Link>
               </MainMenu>
               {this.props.children}
            </div>
