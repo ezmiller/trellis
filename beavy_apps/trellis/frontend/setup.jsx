@@ -6,6 +6,7 @@ import { STORY_SUBMIT, STORY_SUBMIT_REQUEST, STORY_SUBMIT_SUCCESS, STORY_SUBMIT_
 import simpleSubmit from 'reducers/simple_submit'
 
 import SubmitView from './views/SubmitView'
+import LinkView from './views/LinkView'
 
 addNamedExtension('reducers', STORY_SUBMIT, simpleSubmit({
   types: [ STORY_SUBMIT_REQUEST, STORY_SUBMIT_SUCCESS, STORY_SUBMIT_FAILURE ]
@@ -14,4 +15,7 @@ addNamedExtension('reducers', STORY_SUBMIT, simpleSubmit({
 export function setupViews (Application) {
   addExtension('routes',
     <Route key='submit' name='submit' path='/submit/' component={SubmitView} />)
+
+  addExtension('routes',
+    <Route key='link' name='link' path='/l/:linkId/(:slug)' component={LinkView} />)
 }
